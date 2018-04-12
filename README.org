@@ -1,0 +1,25 @@
+#+TITLE: Examples for Emacs Lisp API
+
+* replace-regexp-in-string
+
+#+begin_src emacs-lisp
+(replace-regexp-in-string "World" "Emacs" "Hello, World!")
+#+end_src
+
+#+RESULTS:
+: Hello, Emacs!
+
+#+begin_src emacs-lisp
+(replace-regexp-in-string
+ "[0-9][0-9]\\'"
+ (lambda (string)
+   (concat string
+           (nth (string-to-number string)
+                (append '("st" "nd" "rd") (make-list 17 "th")
+                        '("st" "nd" "rd") (make-list 7 "th")
+                        '("st")))))
+ (format-time-string "%Y %b %d"))
+#+end_src
+
+#+RESULTS:
+: 2018 Apr 12th
