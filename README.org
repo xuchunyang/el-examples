@@ -50,3 +50,14 @@
 
 #+RESULTS:
 | 26 | 1 |
+
+* pcase-lambda
+
+#+begin_src emacs-lisp
+(funcall (pcase-lambda (`(,first ,_ ,third))
+           (+ first third))
+         '(1 2 3))
+#+end_src
+
+#+RESULTS:
+: 4
