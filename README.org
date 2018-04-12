@@ -78,3 +78,19 @@ To remove the advice
 #+begin_src emacs-lisp
 (advice-remove 'find-file 'find-file@verbose)
 #+end_src
+
+* number-sequence
+
+#+begin_src emacs-lisp
+(number-sequence 1 10)
+#+end_src
+
+#+RESULTS:
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+
+#+begin_src emacs-lisp
+(number-sequence 1 10 2)
+#+end_src
+
+#+RESULTS:
+| 1 | 3 | 5 | 7 | 9 |
