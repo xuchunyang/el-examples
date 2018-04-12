@@ -39,3 +39,14 @@
 
 #+RESULTS:
 : abcdefghijklmnopqrstuvwxyz
+
+* pcase-let
+
+#+begin_src emacs-lisp
+(pcase-let ((`(,major-version ,minor-version)
+             (split-string emacs-version "\\.")))
+  (list major-version minor-version))
+#+end_src
+
+#+RESULTS:
+| 26 | 1 |
