@@ -164,3 +164,21 @@ Vector
 
 #+RESULTS:
 : [c b a]
+
+* mapconcat
+
+#+begin_src emacs-lisp
+  (mapconcat #'identity '("./autogen.sh" "./configure" "make") " && ")
+#+end_src
+
+#+RESULTS:
+: ./autogen.sh && ./configure && make
+
+#+begin_src emacs-lisp
+  (mapconcat (lambda (char)
+               (string (+ char (- ?A ?1))))
+             "12345" "")
+#+end_src
+
+#+RESULTS:
+: ABCDE
