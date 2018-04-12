@@ -141,3 +141,26 @@ To remove the advice
 #+begin_src emacs-lisp
 (setf (point) (1+ (random (point-max))))
 #+end_src
+
+* nreverse
+
+List
+
+#+begin_src emacs-lisp
+  (let ((l '(a b c)))
+    (setq l (nreverse l)))
+#+end_src
+
+#+RESULTS:
+| c | b | a |
+
+Vector
+
+#+begin_src emacs-lisp
+  (let ((v '[a b c]))
+    (nreverse v)
+    v)
+#+end_src
+
+#+RESULTS:
+: [c b a]
