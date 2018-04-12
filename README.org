@@ -94,3 +94,15 @@ To remove the advice
 
 #+RESULTS:
 | 1 | 3 | 5 | 7 | 9 |
+
+* seq-map-indexed :26.1:
+
+#+begin_src emacs-lisp
+(seq-map-indexed
+ (lambda (elt idx)
+   (cons idx elt))
+ '(a b c))
+#+end_src
+
+#+RESULTS:
+: ((0 . a) (1 . b) (2 . c))
