@@ -106,3 +106,38 @@ To remove the advice
 
 #+RESULTS:
 : ((0 . a) (1 . b) (2 . c))
+
+* setf
+
+#+begin_src emacs-lisp
+(let ((lst '(1 2 3 4 5)))
+  (setf (nth 2 lst) 100)
+  lst)
+#+end_src
+
+#+RESULTS:
+| 1 | 2 | 100 | 4 | 5 |
+
+#+begin_src emacs-lisp
+(let ((ht (make-hash-table)))
+  (puthash :name "Vi" ht)
+  (setf (gethash :name ht) "Emacs")
+  (gethash :name ht))
+#+end_src
+
+#+RESULTS:
+: Emacs
+
+#+begin_src emacs-lisp
+(with-temp-buffer
+  (insert "12345")
+  (setf (buffer-string) (reverse (buffer-string)))
+  (buffer-string))
+#+end_src
+
+#+RESULTS:
+: 54321
+
+#+begin_src emacs-lisp
+(setf (point) (1+ (random (point-max))))
+#+end_src
