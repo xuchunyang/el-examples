@@ -23,3 +23,19 @@
 
 #+RESULTS:
 : 2018 Apr 12th
+
+* string
+
+#+begin_src emacs-lisp
+(string ?H ?e ?l ?l ?o)
+#+end_src
+
+#+RESULTS:
+: Hello
+
+#+begin_src emacs-lisp
+(apply #'string (number-sequence ?a ?z))
+#+end_src
+
+#+RESULTS:
+: abcdefghijklmnopqrstuvwxyz
