@@ -61,3 +61,20 @@
 
 #+RESULTS:
 : 4
+
+* define-advice
+
+#+begin_src emacs-lisp
+(define-advice find-file (:around (old-fun &rest args) verbose)
+  "Be verbose about what's going on."
+  (let ((filename (car args)))
+    (message "Opening %s..." filename)
+    (apply old-fun args)
+    (message "Opening %s...done" filename)))
+#+end_src
+
+To remove the advice
+
+#+begin_src emacs-lisp
+(advice-remove 'find-file 'find-file@verbose)
+#+end_src
