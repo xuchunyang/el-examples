@@ -186,6 +186,15 @@ Vector
 * dolist
 
 #+begin_src emacs-lisp :results silent
-  (dolist (x '("cool" "power" "addictive"))
+  (dolist (x '("cool" "powerful" "addictive"))
     (message "Emacs is %s" x))
 #+end_src
+
+* mapc
+
+#+begin_src emacs-lisp :results value pp
+  (mapc (lambda (elt) (message "Emacs is %s" elt)) '(cool powerful addictive))
+#+end_src
+
+#+RESULTS:
+: (cool powerful addictive)
