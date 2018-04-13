@@ -95,7 +95,7 @@ To remove the advice
 #+RESULTS:
 | 1 | 3 | 5 | 7 | 9 |
 
-* seq-map-indexed :26.1:
+* seq-map-indexed                                                        :26:
 
 #+begin_src emacs-lisp
 (seq-map-indexed
@@ -225,3 +225,27 @@ Vector
       (vc-dir root)
     (message "You are not under a Git repository"))
 #+end_src
+
+* seq-random-elt                                                         :26:
+
+#+begin_src emacs-lisp
+(seq-random-elt [1 2 3 4])
+#+end_src
+
+#+RESULTS:
+: 4
+
+#+begin_src emacs-lisp
+(seq-random-elt [1 2 3 4])
+#+end_src
+
+#+RESULTS:
+: 3
+
+#+begin_src emacs-lisp
+(seq-random-elt [1 2 3 4])
+#+end_src
+
+#+RESULTS:
+: 4
+
