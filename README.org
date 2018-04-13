@@ -198,3 +198,22 @@ Vector
 
 #+RESULTS:
 : (cool powerful addictive)
+
+* let-alist
+
+#+begin_src emacs-lisp :results value pp
+  ;; https://now.httpbin.org/
+  (let ((alist '((time . ((epoch   . 1523635023.7332768)
+                          (iso8601 . "2018-04-13T15:57:03.733277Z")
+                          (rfc2822 . "Fri, 13 Apr 2018 15:57:03 GMT")
+                          (rfc3339 . "2018-04-13T15:57:03.73Z")))
+                 (lang . "en-US")
+                 (ua   . "URL/Emacs Emacs/26.1"))))
+    (let-alist alist
+      (list .time.iso8601
+            .lang
+            .ua)))
+#+end_src
+
+#+RESULTS:
+: ("2018-04-13T15:57:03.733277Z" "en-US" "URL/Emacs Emacs/26.1")
