@@ -249,3 +249,20 @@ Vector
 #+RESULTS:
 : 4
 
+* cons
+
+#+begin_src emacs-lisp
+  (cons 1 2)
+#+end_src
+
+#+RESULTS:
+: (1 . 2)
+
+#+begin_src emacs-lisp :results value pp
+  (let ((numbers '(1 2 3 4))
+        (zero 0))
+    (setq numbers (cons zero numbers)))
+#+end_src
+
+#+RESULTS:
+: (0 1 2 3 4)
